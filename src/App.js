@@ -14,7 +14,6 @@ const App = () => {
       }
       Object.keys(Keys).forEach((x) => {
         if (Keys[x] === e.key) {
-          console.log(e.key)
           playNote(x)
         }
       })
