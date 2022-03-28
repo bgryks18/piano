@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useContext } from 'react'
 import Keys from '../keys'
 import PianoContext from '../context/PianoContext'
 const Key = (props) => {
-  console.log('key rendered')
   const states = useContext(PianoContext)
   const ref = useRef(null)
   const { note, playNote } = props

@@ -29,7 +29,6 @@ const App = () => {
     const audio = document.createElement('audio')
     audio.src = src
     audio.id = id
-    console.log(audio)
     document.querySelector(`#sounds`).append(audio)
     audio.play()
   }, [])
