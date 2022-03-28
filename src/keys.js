@@ -1,5 +1,3 @@
-import React from 'react'
-
 const keys = {
   c3: 'q',
   'c-3': 'w',
