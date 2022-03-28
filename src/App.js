@@ -31,7 +31,7 @@ const App = () => {
     clearSounds()
     const keyElement = states.refs.find((ref) => ref.note === key).current
       .current
-    const src = require(`./audio/${key}.mp3`)
+    const src = require(`./sounds/${key}.mp3`)
     const audio = document.createElement('audio')
     audio.src = src
     document.querySelector(`#sounds`).append(audio)
