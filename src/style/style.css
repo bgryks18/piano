@@ -55,6 +55,7 @@ body {
   .keyboard .white {
     --width: 20px;
     font-size: 9px;
+    border-left: 0.5px solid #3d3d3d;
   }
 }
 
