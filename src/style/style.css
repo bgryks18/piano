@@ -37,6 +37,27 @@ body {
   border-left: 0;
 }
 
+@media screen and (max-width: 991px) {
+  .keyboard .white {
+    --width: 40px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .keyboard .white {
+    --width: 30px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .keyboard .white {
+    --width: 20px;
+    font-size: 9px;
+  }
+}
+
 .keyboard .black {
   --width: 25px;
   background-color: #3d3d3d;
@@ -52,4 +73,28 @@ body {
 
 .keyboard .black:active {
   border-bottom: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .keyboard .black {
+    --width: 20px;
+    font-size: 10px;
+    border-bottom: 7px solid #141414;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .keyboard .black {
+    --width: 15px;
+    font-size: 10px;
+    border-bottom: 5px solid #141414;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .keyboard .black {
+    --width: 10px;
+    font-size: 9px;
+    border-bottom: 3px solid #141414;
+  }
 }
