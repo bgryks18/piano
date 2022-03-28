@@ -7,7 +7,6 @@ import Keys from './keys'
 import PianoContext from './context/PianoContext'
 const App = () => {
   const states = useContext(PianoContext)
-  useEffect(() => {}, [states])
   useEffect(() => {
     window.addEventListener('keypress', (e) => {
       if (e.repeat) {
