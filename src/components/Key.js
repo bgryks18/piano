@@ -17,7 +17,11 @@ const Key = (props) => {
 
   const keyClass = note.includes('-') ? 'black' : 'white'
   return (
-    <div className={`key ${keyClass}`} onClick={() => playNote(note)} ref={ref}>
+    <div
+      className={`key ${keyClass}`}
+      onClick={() => playNote(note, 'mouse')}
+      ref={ref}
+    >
       {keyKeyboardValue}
     </div>
   )

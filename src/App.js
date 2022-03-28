@@ -8,27 +8,26 @@ import PianoContext from './context/PianoContext'
 const App = () => {
   const states = useContext(PianoContext)
   useEffect(() => {
-
     window.addEventListener('keydown', (e) => {
       if (e.repeat) {
         return
       }
       Object.keys(Keys).forEach((x) => {
         if (Keys[x] === e.key) {
-          playNote(x)
+          playNote(x, 'keyboard')
         }
       })
     })
   }, [])
   const clearSounds = () => {
-    document.querySelectorAll(`audio`).forEach(item=>{
-      if(item.ended===true) {
-        item.remove();
+    document.querySelectorAll(`audio`).forEach((item) => {
+      if (item.ended === true) {
+        item.remove()
         //çalmayan audio elementlerini kaldırma işlemi
       }
     })
   }
-  const playNote = useCallback((key) => {
+  const playNote = useCallback((key, way) => {
     clearSounds()
     const keyElement = states.refs.find((ref) => ref.note === key).current
       .current
@@ -36,14 +35,17 @@ const App = () => {
     const audio = document.createElement('audio')
     audio.src = src
     document.querySelector(`#sounds`).append(audio)
-    if (keyElement.classList.contains('black')) {
-      keyElement.animate([{ borderBottom: '0px solid #141414' }], {
-        duration: 100,
-      })
-    } else {
-      keyElement.animate([{ backgroundColor: '#ececec' }], {
-        duration: 100,
-      })
+    if (way === 'keyboard') {
+      if (keyElement.classList.contains('black')) {
+        console.log('yöntem', way)
+        keyElement.animate([{ borderBottom: '0px solid #141414' }], {
+          duration: 100,
+        })
+      } else {
+        keyElement.animate([{ backgroundColor: '#ececec' }], {
+          duration: 100,
+        })
+      }
     }
     audio.play()
   }, [])

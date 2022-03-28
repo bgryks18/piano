@@ -46,6 +46,9 @@ body {
     &:hover {
       background-color: $gray;
     }
+    &:active {
+      border-bottom: 0;
+    }
     color: $white;
   }
 }
