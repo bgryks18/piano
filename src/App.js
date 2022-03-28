@@ -22,7 +22,6 @@ const App = () => {
   }, [])
 
   const playNote = useCallback((key) => {
-    console.log(key)
     const id = states.refs.find((ref) => ref.note === key).current.current.id
     const src = require(`./audio/${key}.mp3`)
     const audio = document.createElement('audio')
