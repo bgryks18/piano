@@ -15,6 +15,8 @@ const App = () => {
       Object.keys(Keys).forEach((x) => {
         if (Keys[x] === e.key) {
           playNote(x, 'keyboard')
+        } else if (Keys[x] === e.keyCode) {
+          playNote(x, 'keyboard')
         }
       })
     })

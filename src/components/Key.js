@@ -11,7 +11,11 @@ const Key = (props) => {
   let keyKeyboardValue
   Object.getOwnPropertyNames(Keys).forEach((item) => {
     if (item === note) {
-      keyKeyboardValue = Keys[item]
+      if (typeof Keys[item] === 'number') {
+        keyKeyboardValue = String.fromCharCode(Keys[item]).toLowerCase()
+      } else {
+        keyKeyboardValue = Keys[item]
+      }
     }
   })
 
