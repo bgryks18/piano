@@ -8,6 +8,7 @@ import PianoContext from './context/PianoContext'
 const App = () => {
   const states = useContext(PianoContext)
   useEffect(() => {
+
     window.addEventListener('keydown', (e) => {
       if (e.repeat) {
         return
@@ -19,8 +20,16 @@ const App = () => {
       })
     })
   }, [])
-
+  const clearSounds = () => {
+    document.querySelectorAll(`audio`).forEach(item=>{
+      if(item.ended===true) {
+        item.remove();
+        //çalmayan audio elementlerini kaldırma işlemi
+      }
+    })
+  }
   const playNote = useCallback((key) => {
+    clearSounds()
     const keyElement = states.refs.find((ref) => ref.note === key).current
       .current
     const src = require(`./audio/${key}.mp3`)
