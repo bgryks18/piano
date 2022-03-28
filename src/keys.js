@@ -28,6 +28,7 @@ const keys = {
   d5: 'd',
   'd-5': 'D',
   e5: 'f',
+  f5: 'g',
 }
 
 export default keys
