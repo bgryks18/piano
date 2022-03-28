@@ -18,16 +18,23 @@ body {
   height: calc(var(--width) * 4);
   width: var(--width);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .keyboard .white {
   --width: 50px;
   background-color: #ccc;
-  border: 1px solid #333;
+  border-left: 1px solid #3d3d3d;
 }
 
 .keyboard .white:hover {
   background-color: #ececec;
+}
+
+.keyboard .white:first-child {
+  border-left: 0;
 }
 
 .keyboard .black {
@@ -36,12 +43,13 @@ body {
   margin: 0 calc(var(--width) / -2);
   z-index: 1;
   border-bottom: 10px solid #141414;
+  color: #ccc;
 }
 
 .keyboard .black:hover {
   background-color: #686868;
 }
 
-.keyboard .black:active {
+.keyboard .black.active {
   border-bottom: 0;
 }

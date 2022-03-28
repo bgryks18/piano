@@ -22,13 +22,19 @@ body {
     height: calc(var(--width) * 4);
     width: var(--width);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .white {
     --width: 50px;
     background-color: $white;
-    border: 1px solid #333;
+    border-left: 1px solid $light_black;
     &:hover {
       background-color: $light_white;
+    }
+    &:first-child {
+      border-left: 0;
     }
   }
   .black {
@@ -40,8 +46,9 @@ body {
     &:hover {
       background-color: $gray;
     }
-    &:active {
+    &.active {
       border-bottom: 0;
     }
+    color: $white;
   }
 }
