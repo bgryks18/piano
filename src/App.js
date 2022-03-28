@@ -37,7 +37,7 @@ const App = () => {
     document.querySelector(`#sounds`).append(audio)
     if (way === 'keyboard') {
       if (keyElement.classList.contains('black')) {
-        console.log('yöntem', way)
+        // zaman alacağı için 0px olmasına rağmen renk belirtiyoruz çünkü geçiş olacak
         keyElement.animate([{ borderBottom: '0px solid #141414' }], {
           duration: 100,
         })
