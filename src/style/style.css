@@ -49,7 +49,3 @@ body {
 .keyboard .black:hover {
   background-color: #686868;
 }
-
-.keyboard .black.active {
-  border-bottom: 0;
-}

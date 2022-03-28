@@ -12,9 +12,9 @@ const App = () => {
       if (e.repeat) {
         return
       }
-
       Object.keys(Keys).forEach((x) => {
         if (Keys[x] === e.key) {
+          console.log(e.key)
           playNote(x)
         }
       })
@@ -22,10 +22,21 @@ const App = () => {
   }, [])
 
   const playNote = useCallback((key) => {
+    const keyElement = states.refs.find((ref) => ref.note === key).current
+      .current
     const src = require(`./audio/${key}.mp3`)
     const audio = document.createElement('audio')
     audio.src = src
     document.querySelector(`#sounds`).append(audio)
+    if (keyElement.classList.contains('black')) {
+      keyElement.animate([{ borderBottom: '0px solid #141414' }], {
+        duration: 100,
+      })
+    } else {
+      keyElement.animate([{ backgroundColor: '#ececec' }], {
+        duration: 100,
+      })
+    }
     audio.play()
   }, [])
   return (
