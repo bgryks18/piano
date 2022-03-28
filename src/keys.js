@@ -23,6 +23,11 @@ const keys = {
   a4: '8',
   'a-4': '3',
   b4: '4',
+  c5: '4',
+  'c-5': 'x',
+  d5: '3',
+  'd-5': 'z',
+  e5: '-',
 }
 
 export default keys
