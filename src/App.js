@@ -8,7 +8,7 @@ import PianoContext from './context/PianoContext'
 const App = () => {
   const states = useContext(PianoContext)
   useEffect(() => {
-    window.addEventListener('keypress', (e) => {
+    window.addEventListener('keydown', (e) => {
       if (e.repeat) {
         return
       }
