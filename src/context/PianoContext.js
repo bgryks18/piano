@@ -3,8 +3,6 @@ const PianoContext = createContext()
 PianoContext.displayName = `Bugra's Piano App`
 let initState = {
   refs: [],
-  keys: [],
-  history: [],
 }
 export const PianoProvider = ({ children }) => {
   return (
