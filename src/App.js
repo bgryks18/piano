@@ -21,23 +21,14 @@ const App = () => {
       })
     })
   }, [])
-  const clearSounds = () => {
-    document.querySelectorAll(`audio`).forEach((item) => {
-      if (item.ended === true) {
-        item.remove()
-        //çalmayan audio elementlerini kaldırma işlemi
-      }
-    })
-  }
   const playNote = useCallback((key, way) => {
-    clearSounds()
-    const keyElement = states.refs.find((ref) => ref.note === key).current
-      .current
     const src = require(`./sounds/${key}.mp3`)
-    const audio = document.createElement('audio')
-    audio.src = src
-    document.querySelector(`#sounds`).append(audio)
+    const audio = new Audio(src)
+    audio.play()
+
     if (way === 'keyboard') {
+      const keyElement = states.refs.find((ref) => ref.note === key).current
+        .current
       if (keyElement.classList.contains('black')) {
         // zaman alacağı için 0px olmasına rağmen renk belirtiyoruz çünkü geçiş olacak
         keyElement.animate([{ borderBottom: '0px solid #141414' }], {
@@ -49,14 +40,12 @@ const App = () => {
         })
       }
     }
-    audio.play()
   }, [])
   return (
     <div className="keyboard">
       {Object.getOwnPropertyNames(Keys).map((item) => {
         return <Key note={item} playNote={playNote} key={item} />
       })}
-      <div id="sounds"></div>
     </div>
   )
 }
