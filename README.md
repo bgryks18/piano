@@ -47,6 +47,10 @@ Ya da bir keyCode olarak tanımlayabilirsiniz, örneğin 81 gibi. Bu number olma
 
 Eğer **/src/sounds/** dizinine bir ses dosyası ekleyip, **/src/keys.js** dosyasındaki objeye dosya ismiyle aynı bir property eklerseniz, uygulamada bir piano tuşu daha oluşacaktır.
 
+## Mobil Uyumluluk
+
+400 pixel'e kadar uyumludur. Daha altında bozulmaya başlar.
+
 ## Not
 
 Netlify demosunda, seste çok hafif bir gecikme farkedebilirsiniz ama local sunucuda böyle bir durum hiç olmuyor. Bu yüzden sunucudan kaynaklı olduğunu düşünüyorum.
