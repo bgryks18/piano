@@ -22,10 +22,7 @@ const App = () => {
     })
   }, [])
   const playNote = useCallback((key, way) => {
-    const src = require(`./sounds/${key}.mp3`)
-    const audio = new Audio(src)
-    audio.play()
-
+    new Audio(require(`./sounds/${key}.mp3`)).play()
     if (way === 'keyboard') {
       const keyElement = states.refs.find((ref) => ref.note === key).current
         .current
