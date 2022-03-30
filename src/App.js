@@ -12,17 +12,18 @@ const App = () => {
       if (e.repeat) {
         return
       }
-      Object.keys(Keys).forEach((x) => {
-        if (Keys[x] === e.key) {
-          playNote(x, 'keyboard')
-        } else if (Keys[x] === e.keyCode) {
-          playNote(x, 'keyboard')
+      Object.keys(Keys).forEach((note) => {
+        const keySource = require(`./sounds/${note}.mp3`)
+        if (Keys[note] === e.key) {
+          playNote(note, 'keyboard', keySource)
+        } else if (Keys[note] === e.keyCode) {
+          playNote(note, 'keyboard', keySource)
         }
       })
     })
   }, [])
-  const playNote = useCallback((key, way) => {
-    new Audio(require(`./sounds/${key}.mp3`)).play()
+  const playNote = useCallback((key, way, keySource) => {
+    new Audio(keySource).play()
     if (way === 'keyboard') {
       const keyElement = states.refs.find((ref) => ref.note === key).current
         .current

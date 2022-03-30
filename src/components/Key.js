@@ -5,8 +5,13 @@ const Key = (props) => {
   const states = useContext(PianoContext)
   const ref = useRef(null)
   const { note, playNote } = props
+  const keySource = require(`../sounds/${note}.mp3`)
   useEffect(() => {
-    states.refs.push({ current: ref, note })
+    states.refs.push({
+      current: ref,
+      note,
+      keySource,
+    })
   }, [])
   let keyKeyboardValue
   Object.getOwnPropertyNames(Keys).forEach((item) => {
@@ -23,7 +28,7 @@ const Key = (props) => {
   return (
     <div
       className={`key ${keyClass}`}
-      onClick={() => playNote(note, 'mouse')}
+      onClick={() => playNote(note, 'mouse', keySource)}
       ref={ref}
     >
       {keyKeyboardValue}
