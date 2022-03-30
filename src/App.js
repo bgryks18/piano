@@ -1,6 +1,4 @@
 import React, { useCallback, useEffect, useContext } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap'
 import './style/style.min.css'
 import Key from './components/Key'
 import Keys from './keys'
