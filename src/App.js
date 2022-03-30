@@ -11,7 +11,7 @@ const App = () => {
         return
       }
       Object.keys(Keys).forEach((note) => {
-        const keySource = require(`./sounds/${note}.mp3`)
+        const keySource = states.refs.find((ref) => ref.note === note).keySource
         if (Keys[note] === e.key) {
           playNote(note, 'keyboard', keySource)
         } else if (Keys[note] === e.keyCode) {
