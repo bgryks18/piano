@@ -5,6 +5,9 @@ Klavyeyle veya mouse ile tarayıcı üzerinden piyano çalmanızı sağlayan web
 Uygulamanın demosu:
 https://prismatic-fox-0c98bd.netlify.app
 
+## Not
+   Netlify demosunda, seste çok hafif bir gecikme farkedebilirsiniz ama localde çalıştırınca böyle bir durum hiç olmuyor. Bu yüzden sunucudan kaynaklı olduğunu düşünüyorum.
+
 ## Uygulamayı Çalıştırma
 
 Aşağıdaki komutla projeyi klonlayın.
@@ -43,7 +46,5 @@ dizininde ses dosyaları tutuluyor.
    Eğer **/src/sounds/** dizinine bir ses dosyası ekleyip, **/src/keys.js** dosyasındaki objeye dosya ismiyle aynı bir property eklerseniz, uygulamada bir piano tuşu daha oluşacaktır.
    
 ## Mobil Uyumluluk
-   400 pixel'e kadar uyumludur. Daha altında bozulmaya başlar. 
+   Tasarım, 400 pixel'e kadar uyumludur. Daha altında bozulur. Ancak işlev olarak mobilde çalıştırmaya uygun değildir.
    
-## Not
-   Netlify demosunda, seste çok hafif bir gecikme farkedebilirsiniz ama local sunucuda böyle bir durum hiç olmuyor. Bu yüzden sunucudan kaynaklı olduğunu düşünüyorum.
